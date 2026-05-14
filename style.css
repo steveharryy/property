@@ -397,60 +397,138 @@ footer {
 }
 
 @media (max-width: 992px) {
-    .land-grid, .contact-grid, .footer-grid, .grid-2 {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    .land-grid, .contact-grid, .footer-grid, .grid-2, .contact-container {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
     }
     
     .page-hero {
-        height: 350px;
-    }
-    
-    .page-hero-content h1 {
-        font-size: 2.8rem;
+        height: 300px !important;
     }
 }
 
 @media (max-width: 768px) {
+    /* Mobile Menu Fix */
     .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 0;
-        height: 100vh;
-        width: 70%;
-        background-color: var(--primary-color);
-        flex-direction: column;
-        justify-content: center;
-        transition: var(--transition);
-        z-index: 1000;
+        position: fixed !important;
+        right: -100% !important;
+        top: 0 !important;
+        height: 100vh !important;
+        width: 100% !important;
+        background-color: #0a192f !important; /* Force solid background */
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        transition: 0.5s ease !important;
+        z-index: 2000 !important;
+        gap: 30px !important;
+        padding: 50px 0 !important;
+    }
+    
+    .nav-links li {
+        width: 100% !important;
+        text-align: center !important;
+        opacity: 1 !important; /* Ensure they show up */
+        transform: none !important;
+    }
+
+    .nav-links a {
+        color: white !important;
+        font-size: 1.4rem !important;
+        font-weight: 600 !important;
+        display: block !important;
+        width: 100% !important;
+        padding: 15px 0 !important;
+        text-transform: uppercase !important;
+    }
+
+    .nav-links a.btn-primary {
+        background-color: var(--accent-color) !important;
+        width: 200px !important;
+        margin: 0 auto !important;
+        border-radius: 4px !important;
+        padding: 12px 0 !important;
+        color: white !important;
     }
     
     .nav-active {
-        right: 0;
+        right: 0 !important;
     }
     
     .burger {
-        display: block;
+        display: block !important;
+        position: relative !important;
+        z-index: 2001 !important;
     }
-    
-    .hero-content h1 {
-        font-size: 2.8rem;
-    }
-    
-    .page-hero-content h1 {
-        font-size: 2.4rem;
-    }
-    
-    .page-hero-content p {
-        font-size: 1.1rem;
-    }
-    
-    .section {
-        padding: 50px 0;
-    }
-    
+
+    /* Form & Content Alignment Fixes */
     .container {
-        padding: 0 15px;
+        padding: 0 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .section {
+        padding: 40px 0 !important;
+        overflow: hidden !important;
+    }
+
+    .section-title {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+    }
+
+    .section-title::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .contact-grid, .grid-2 {
+        gap: 40px !important;
+    }
+
+    .contact-info, .contact-form {
+        width: 100% !important;
+        transform: none !important; /* Stop animations from shifting them on small screens */
+        opacity: 1 !important;
+    }
+
+    input, select, textarea {
+        width: 100% !important;
+        font-size: 16px !important; /* Prevent iOS zoom */
+    }
+
+    /* Prevent white space on right */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Table Fix */
+    .table-container {
+        margin: 20px -15px !important;
+        padding: 0 15px !important;
+        width: calc(100% + 30px) !important;
+    }
+
+    table {
+        font-size: 0.8rem !important;
+    }
+
+    th, td {
+        padding: 8px !important;
+    }
+
+    /* Logo Fix */
+    .brand-name {
+        font-size: 1rem !important;
     }
 }
+
+
 
