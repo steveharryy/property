@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Investments - H2R Developers</title>
+    <meta name="description" content="Explore premium residential, agricultural, and farmhouse land investments with H2R Developers.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0a192f;
+            --accent-color: #c19b45;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --bg-light: #f9f9f9;
+            --serif-font: 'Cormorant Garamond', serif;
+            --body-font: 'Outfit', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--body-font); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 100px 0; }
+        .bg-light { background-color: var(--bg-light); }
+        .bg-dark { background-color: var(--primary-color); color: var(--white); }
+
+        .section-title {
+            font-family: var(--serif-font);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        .text-center .section-title::after { left: 50%; transform: translateX(-50%); }
+        .text-center { text-align: center; }
+        .accent { color: var(--accent-color); }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        .btn-primary { background-color: var(--accent-color); color: var(--white); }
+        .btn-primary:hover { background-color: var(--primary-color); transform: scale(1.05); }
+
+        /* Navbar */
+        #navbar {
+            position: sticky; top: 0; left: 0; width: 100%; z-index: 1000;
+            padding: 10px 0; background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1200px; margin: 0 auto; padding: 0 20px;
+        }
+        img.logo { height: 50px; width: auto; object-fit: contain; }
+        .logo-link { display: flex; align-items: center; gap: 15px; }
+        .brand-name {
+            font-family: var(--serif-font); font-size: 1.1rem;
+            color: var(--primary-color); font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .nav-links { display: flex; align-items: center; gap: 25px; }
+        .nav-links a { color: var(--primary-color); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--accent-color); }
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0; background-color: var(--white);
+            min-width: 200px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: none; z-index: 1000; padding: 10px 0;
+            border-top: 3px solid var(--accent-color);
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu li a { padding: 12px 20px; display: block; font-size: 0.8rem; text-transform: capitalize; }
+        .burger { display: none; cursor: pointer; }
+        .burger div { width: 25px; height: 3px; background-color: var(--primary-color); margin: 5px; }
+
+        /* Page Heroes */
+        .page-hero {
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .page-hero-content h1 {
+            font-family: var(--serif-font);
+            font-size: 3.8rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .page-hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Land Sections */
+        .land-section { padding: 80px 0; }
+        .land-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .land-image img { border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        
+        /* Gallery */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; height: 350px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: var(--white);
+        }
+
+        /* Footer */
+        footer { padding: 60px 0 20px; border-top: 1px solid #eee; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 40px; }
+        .footer-logo { height: 60px; margin-bottom: 20px; }
+
+        @media (max-width: 992px) {
+            .land-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .burger { display: block; }
+            .page-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="H2R Developers Logo" class="logo">
+                <span class="brand-name">H2R DEVELOPERS</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Lands ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="lands.html#residential">Residential</a></li>
+                        <li><a href="lands.html#agricultural">Agricultural</a></li>
+                        <li><a href="lands.html#farmhouse">Farmhouse</a></li>
+                    </ul>
+                </li>
+                <li><a href="builder-floor.html">Builder Floor</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.75rem;">Contact us</a></li>
+            </ul>
+            <div class="burger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: url('land1.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>Our <span class="accent">Land Assets</span></h1>
+            <p>100% Company-Owned, Quality-Assured Investments</p>
+        </div>
+    </section>
+
+    <!-- Residential Section -->
+    <section id="residential" class="land-section">
+        <div class="container">
+            <div class="land-grid">
+                <div class="land-image">
+                    <img src="land1.jpg" alt="Residential Plots">
+                </div>
+                <div class="land-content">
+                    <h2 class="section-title">RESIDENTIAL <span class="accent">PLOTS</span></h2>
+                    <p>Discover prime residential plots in Gurugram's fastest-growing sectors. Our curated portfolio includes assets in Sector 102 (Dwarka Expressway) and South Gurgaon. Each plot is 100% company-owned, ensuring a transparent and secure investment for your dream home.</p>
+                    <ul style="margin: 20px 0; color: var(--text-light);">
+                        <li><i class="fas fa-check accent"></i> Prime Sector Locations</li>
+                        <li><i class="fas fa-check accent"></i> Clear Title & Documentation</li>
+                        <li><i class="fas fa-check accent"></i> High Appreciation Potential</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Enquiry</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agricultural Section -->
+    <section id="agricultural" class="land-section bg-light">
+        <div class="container">
+            <div class="land-grid" style="direction: rtl;">
+                <div class="land-image" style="direction: ltr;">
+                    <img src="land2.jpg" alt="Agricultural Land">
+                </div>
+                <div class="land-content" style="direction: ltr;">
+                    <h2 class="section-title">AGRICULTURAL <span class="accent">ESTATE</span></h2>
+                    <p>Invest in fertile agricultural land near the Sohna Road corridor. These assets are perfect for long-term capital growth and green living. Our 2621 Sq. Yard agricultural estate near Sohna Toll offers an exclusive opportunity for strategic land banking.</p>
+                    <ul style="margin: 20px 0; color: var(--text-light);">
+                        <li><i class="fas fa-check accent"></i> Fertile Sohna Road Corridor</li>
+                        <li><i class="fas fa-check accent"></i> Gated & Secured Estates</li>
+                        <li><i class="fas fa-check accent"></i> 100% Transparency</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Enquiry</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farmhouse Section -->
+    <section id="farmhouse" class="land-section">
+        <div class="container">
+            <div class="land-grid">
+                <div class="land-image">
+                    <img src="land4.jpg" alt="Exclusive Farmhouse">
+                </div>
+                <div class="land-content">
+                    <h2 class="section-title">EXCLUSIVE <span class="accent">FARMHOUSE</span></h2>
+                    <p>Experience the ultimate luxury of space with our exclusive farmhouse estates. Designed for those who seek serenity away from the city's hustle, these company-owned assets combine high-value land with the potential for bespoke luxury retreats.</p>
+                    <ul style="margin: 20px 0; color: var(--text-light);">
+                        <li><i class="fas fa-check accent"></i> Expansive Private Estates</li>
+                        <li><i class="fas fa-check accent"></i> Lush Green Surroundings</li>
+                        <li><i class="fas fa-check accent"></i> Secured Investment Legacy</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Enquiry</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="logo.png" alt="H2R Developers" class="footer-logo">
+                    <h3>H2R Developers</h3>
+                    <p>Premium real estate solutions in Gurugram and Sohna. Building dreams, one home at a time.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="lands.html#residential">Residential</a></li>
+                        <li><a href="lands.html#agricultural">Agricultural</a></li>
+                        <li><a href="lands.html#farmhouse">Farmhouse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p>Office: Shop No. 14, Main Maruti Kunj Road, Gurugram</p>
+                    <p>+91 98765 43210</p>
+                    <p>info@h2rdevelopers.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 H2R Developers. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

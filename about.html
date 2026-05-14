@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - H2R Developers</title>
+    <meta name="description"
+        content="Learn more about H2R Developers, our leadership team, mission, and ongoing projects in Gurugram.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+<style>
+/* Root Variables */
+:root {
+    --primary-color: #1b2945; /* Precise Navy */
+    --accent-color: #c19b45;  /* Precise Metallic Gold */
+    --accent-hover: #a8873c;
+    --text-color: #333333;
+    --text-light: #666666;
+    --bg-light: #f7f7f7;
+    --bg-dark: #1b2945;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+    --container-width: 1200px;
+    --serif-font: 'Cormorant Garamond', serif;
+}
+
+.parallax {
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--white);
+}
+
+h1, h2, h3, h4, .nav-links a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.bg-light { background-color: var(--bg-light); }
+.bg-dark { background-color: var(--bg-dark); color: var(--white); }
+
+.text-center { text-align: center; }
+.accent { color: var(--accent-color); }
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.btn-outline {
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+/* Navbar */
+#navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img.logo, #navbar .logo img {
+    height: 50px;
+    width: auto;
+    padding: 2px 0;
+    object-fit: contain;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-name {
+    font-family: var(--serif-font);
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Burger Menu */
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 1.2rem;
+        display: none; /* Hide on small mobile to save space, or keep it? */
+    }
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 1000;
+    padding: 10px 0;
+    border-top: 3px solid var(--accent-color);
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    padding: 12px 20px;
+    display: block;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--bg-light);
+    color: var(--accent-color);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeInDown 0.3s ease;
+}
+
+/* Hero Section */
+#hero {
+    height: calc(100vh - 80px); /* Subtract navbar height approx */
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Amenities Grid (Sharp) */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0; /* Sharp edges */
+}
+
+.amenity-item {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+
+.amenity-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.amenity-item:hover img {
+    transform: scale(1.1);
+}
+
+.amenity-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: var(--white);
+}
+
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    margin: 40px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Footer (Light) */
+footer {
+    background-color: var(--white);
+    color: var(--text-color);
+    padding: 60px 0 20px;
+    border-top: 1px solid #eee;
+}
+
+footer h4 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+footer p, footer li a {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+footer li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Utility Classes */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.reveal-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out;
+}
+
+.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.leader-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid var(--accent-color);
+}
+
+.team-card h3 {
+    font-family: var(--serif-font);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.team-role {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+}
+
+/* Page Heroes */
+.page-hero {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.page-hero-content h1 {
+    font-family: var(--serif-font);
+    font-size: 3.8rem;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.page-hero-content p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.overview-logo-container {
+    text-align: center;
+}
+
+.overview-logo {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08));
+}
+
+.overview-text h3 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.overview-text p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Land Gallery (About Section) */
+.land-gallery {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) #eee;
+}
+
+.land-item {
+    flex: 0 0 calc(25% - 15px);
+    min-width: 250px;
+    background-color: var(--white);
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.land-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: #fff;
+}
+
+.land-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.land-desc {
+    margin-top: 15px;
+    font-family: var(--serif-font);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.4;
+    text-align: center;
+    padding: 10px 5px;
+    background: linear-gradient(to right, transparent, rgba(193, 155, 69, 0.05), transparent);
+    border-top: 2px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.land-item:hover .land-desc {
+    color: var(--accent-color);
+    background: rgba(193, 155, 69, 0.1);
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+    .grid-2, .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .amenities-grid, .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .location-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .land-item {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 70%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        justify-content: center;
+        transition: var(--transition);
+    }
+    
+    .nav-active {
+        right: 0;
+    }
+    
+    .burger {
+        display: block;
+    }
+    
+    .amenities-grid, .gallery-grid, .location-grid, .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .land-item {
+        flex: 0 0 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 70%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        justify-content: center;
+        transition: var(--transition);
+    }
+    
+    .nav-active {
+        right: 0;
+    }
+    
+    .burger {
+        display: block;
+    }
+    
+    .amenities-grid, .gallery-grid, .location-grid, .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Leadership Section */
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.leader-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid #eee;
+    height: 100%;
+}
+
+.leader-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.leader-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid var(--accent-color);
+}
+
+.leader-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    text-transform: none;
+}
+
+.leader-card .designation {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.leader-card p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+@media (max-width: 992px) {
+    .leadership-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Blog Page Specifics */
+.hero-blogs {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('blog1.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-blogs h1 {
+    font-family: var(--serif-font);
+    font-size: 4rem;
+    color: var(--white);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.blog-card {
+    background: var(--white);
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.blog-card:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.blog-img {
+    height: 250px;
+    overflow: hidden;
+}
+
+.blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-img img {
+    transform: scale(1.1);
+}
+
+.blog-info {
+    padding: 25px;
+}
+
+.blog-date {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.blog-info h3 {
+    font-family: var(--serif-font);
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    text-transform: none;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    letter-spacing: 0;
+}
+
+.blog-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.btn-ghost {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.blog-card:hover .btn-ghost {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-blogs h1 {
+        font-size: 3rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="H2R Developers Logo" class="logo">
+                <span class="brand-name">H2R DEVELOPERS</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Lands ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="lands.html#residential">Residential</a></li>
+                        <li><a href="agricultural.html">Agricultural</a></li>
+                        <li><a href="lands.html#farmhouse">Farmhouse</a></li>
+                    </ul>
+                </li>
+                <li><a href="builder-floor.html">Builder Floor</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html" class="btn btn-primary"
+                        style="padding: 8px 15px; font-size: 0.75rem;">Contact us</a></li>
+            </ul>
+            <div class="burger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: url('home_hero_new.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>About <span class="accent">Us</span></h1>
+            <p>Building Dreams, Delivering Excellence</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="section">
+        <div class="container grid-2">
+            <div class="reveal-left">
+                <h2 class="section-title">WHO WE <span class="accent">ARE</span></h2>
+                <p>H2R Developers is a trusted name in real estate, operating in Gurugram and Sohna with a focus on affordable luxury housing, land investments, and builder floors. We believe every family deserves a quality home.</p>
+                <br>
+                <p>Our team of experienced professionals ensures transparency, quality construction, and timely delivery — making your home-buying journey smooth and trustworthy.</p>
+                <ul class="feature-list" style="margin-top: 20px;">
+                    <li><i class="fas fa-check-circle accent"></i> 10+ Years of Experience</li>
+                    <li><i class="fas fa-check-circle accent"></i> 500+ Happy Families</li>
+                    <li><i class="fas fa-check-circle accent"></i> Prime Gurugram Locations</li>
+                    <li><i class="fas fa-check-circle accent"></i> Transparent Dealings</li>
+                </ul>
+            </div>
+            <div class="reveal-right">
+                <img src="homebegins.png" alt="H2R Developers Building">
+            </div>
+        </div>
+    </section>
+
+    <!-- Ongoing Projects -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">ONGOING <span class="accent">PROJECTS</span></h2>
+            <div class="land-gallery">
+                <div class="land-item">
+                    <img src="hero_vallyca.jpg" alt="Vallyca Residency">
+                    <p class="land-desc">Vallyca Residency — Sohna Road, Gurugram</p>
+                </div>
+                <div class="land-item">
+                    <img src="dlf_almeda.jpg" alt="DLF Almeda">
+                    <p class="land-desc">DLF Almeda — Sector 73, Gurugram</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title text-center">OUR <span class="accent">LEADERSHIP</span></h2>
+            <div class="team-grid">
+                <div class="team-card reveal-up">
+                    <img src="jitender.png" alt="Jitender Raghav" class="leader-img">
+                    <h3>Jitender Raghav</h3>
+                    <p class="team-role">Founder & CEO</p>
+                    <p>Visionary leader with 15+ years in real estate development across Gurugram and Haryana.</p>
+                </div>
+                <div class="team-card reveal-up">
+                    <img src="ravinder.png" alt="Ravinder Raghav" class="leader-img">
+                    <h3>Ravinder Raghav</h3>
+                    <p class="team-role">Co-Founder & Director</p>
+                    <p>Expert in land acquisition and project management with deep knowledge of the NCR real estate market.</p>
+                </div>
+                <div class="team-card reveal-up">
+                    <img src="deepak.png" alt="Deepak Gupta" class="leader-img">
+                    <h3>Deepak Gupta</h3>
+                    <p class="team-role">Director of Projects</p>
+                    <p>Driving excellence in construction and quality assurance for all H2R residential developments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="logo.png" alt="H2R Developers" class="footer-logo">
+                    <h3>H2R Developers</h3>
+                    <p>Premium real estate solutions in Gurugram and Sohna. Building dreams, one home at a time.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="lands.html">Land Investments</a></li>
+                        <li><a href="builder-floor.html">Builder Floor</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p>Office: Shop No. 14, Main Maruti Kunj Road, Gurugram</p>
+                    <p>+91 98765 43210</p>
+                    <p>info@h2rdevelopers.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 H2R Developers. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Sticky Navbar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // 2. Scroll Animations (Intersection Observer)
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    const animateElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
+    animateElements.forEach(el => observer.observe(el));
+
+    // 3. Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 70;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // 4. Robust WhatsApp Form Submission
+    document.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const form = e.target;
+        
+        const formData = new FormData(form);
+        let message = `New Inquiry from H2R Developers Website:\n\n`;
+        
+        formData.forEach((value, key) => {
+            if (value && value.trim() !== "") {
+                message += `*${key}*: ${value}\n`;
+            }
+        });
+        
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappNumber = "919876543210";
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+        alert('Opening WhatsApp to send your inquiry...');
+        form.reset();
+    });
+
+    // 5. Mobile Nav Toggle
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    if (burger) {
+        burger.addEventListener('click', () => {
+            // Toggle Nav
+            nav.classList.toggle('nav-active');
+
+            // Animate Links
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+
+            // Burger Animation
+            burger.classList.toggle('toggle');
+        });
+    }
+});
+
+// Add keyframes for mobile menu via JS
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes navLinkFade {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0px); }
+    }
+    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+    .toggle .line2 { opacity: 0; }
+    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+`;
+document.head.appendChild(style);
+
+</script>
+</body>
+
+</html>
