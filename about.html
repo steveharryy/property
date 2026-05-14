@@ -623,89 +623,22 @@ footer li {
 
 /* Responsive */
 @media (max-width: 992px) {
-    .grid-2, .contact-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .amenities-grid, .gallery-grid {
+    .amenities-grid, .gallery-grid, .location-grid, .leadership-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .location-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
     .land-item {
         flex: 0 0 calc(50% - 10px);
     }
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 0;
-        height: 100vh;
-        width: 70%;
-        background-color: var(--primary-color);
-        flex-direction: column;
-        justify-content: center;
-        transition: var(--transition);
-    }
-    
-    .nav-active {
-        right: 0;
-    }
-    
-    .burger {
-        display: block;
-    }
-    
-    .amenities-grid, .gallery-grid, .location-grid, .footer-grid {
+    .amenities-grid, .gallery-grid, .location-grid, .leadership-grid {
         grid-template-columns: 1fr;
     }
     
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-
     .land-item {
         flex: 0 0 85%;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 0;
-        height: 100vh;
-        width: 70%;
-        background-color: var(--primary-color);
-        flex-direction: column;
-        justify-content: center;
-        transition: var(--transition);
-    }
-    
-    .nav-active {
-        right: 0;
-    }
-    
-    .burger {
-        display: block;
-    }
-    
-    .amenities-grid, .gallery-grid, .location-grid, .footer-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero-content h1 {
-        font-size: 3rem;
     }
 }
 
@@ -763,17 +696,7 @@ footer li {
     text-align: justify;
 }
 
-@media (max-width: 992px) {
-    .leadership-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
 
-@media (max-width: 768px) {
-    .leadership-grid {
-        grid-template-columns: 1fr;
-    }
-}
 /* Blog Page Specifics */
 .hero-blogs {
     height: 400px;

@@ -313,6 +313,20 @@
             animation: fadeInDown 0.3s ease;
         }
 
+        .hero-title {
+            font-size: 5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+        }
+
+        .hero-description {
+            font-size: 1.6rem;
+        }
+
         /* Hero Section */
         #hero {
             height: calc(100vh - 80px);
@@ -641,6 +655,7 @@
                 flex-direction: column;
                 justify-content: center;
                 transition: var(--transition);
+                z-index: 1000;
             }
 
             .nav-active {
@@ -658,45 +673,29 @@
                 grid-template-columns: 1fr;
             }
 
-            .hero-content h1 {
-                font-size: 3rem;
+            .hero-title {
+                font-size: 3rem !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem !important;
+                letter-spacing: 2px !important;
+            }
+            
+            .hero-description {
+                font-size: 1.2rem !important;
             }
 
             .land-item {
                 flex: 0 0 85%;
             }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                right: -100%;
-                top: 0;
-                height: 100vh;
-                width: 70%;
-                background-color: var(--primary-color);
-                flex-direction: column;
-                justify-content: center;
-                transition: var(--transition);
+            
+            .section {
+                padding: 50px 0;
             }
-
-            .nav-active {
-                right: 0;
-            }
-
-            .burger {
-                display: block;
-            }
-
-            .amenities-grid,
-            .gallery-grid,
-            .location-grid,
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content h1 {
-                font-size: 3rem;
+            
+            .section-title {
+                font-size: 1.8rem;
             }
         }
 
@@ -922,15 +921,15 @@
     <section id="home" class="parallax"
         style="background-image: url('home_hero_new.jpg'); height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; text-align: center;">
         <div class="hero-overlay"></div>
-        <div class="hero-content reveal-up" style="max-width: 900px; color: white;">
+        <div class="hero-content reveal-up" style="max-width: 900px; color: white; padding: 0 20px;">
             <p class="hero-subtitle"
-                style="font-size: 1.4rem; letter-spacing: 4px; font-weight: 500; margin-bottom: 20px; color: var(--accent-color); text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+                style="font-family: var(--serif-font); font-weight: 500; margin-bottom: 20px; color: var(--accent-color); text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
                 H2R DEVELOPERS PRESENTS</p>
             <h1 class="hero-title"
-                style="font-size: 5rem; font-family: var(--serif-font); margin-bottom: 25px; text-shadow: 0 4px 20px rgba(0,0,0,0.6);">
+                style="font-family: var(--serif-font); margin-bottom: 25px; text-shadow: 0 4px 20px rgba(0,0,0,0.6);">
                 Vallyca Residency</h1>
             <p class="hero-description"
-                style="font-size: 1.6rem; font-weight: 400; letter-spacing: 1px; color: rgba(255,255,255,0.95); text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+                style="font-weight: 400; letter-spacing: 1px; color: rgba(255,255,255,0.95); text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
                 Spread over 9.8 acres • 3 BHK Apartments • 60% Open Green Spaces</p>
             <div class="hero-cta" style="margin-top: 40px;">
                 <a href="https://drive.google.com/file/d/1JsvW18z8duRLI33MzwbEsHPbWFeJ5lmO/view?usp=sharing"
