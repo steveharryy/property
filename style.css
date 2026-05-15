@@ -349,6 +349,8 @@ img.logo {
 
 /* Footer */
 footer {
+    background-color: var(--white);
+    color: var(--text-color);
     padding: 60px 0 20px;
     border-top: 1px solid #eee;
 }
@@ -362,6 +364,23 @@ footer {
 .footer-logo {
     height: 60px;
     margin-bottom: 20px;
+}
+
+footer h4 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+footer p,
+footer li a {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+footer li {
+    margin-bottom: 10px;
 }
 
 .footer-bottom {
@@ -563,16 +582,16 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for text contrast */
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 1;
-    transition: var(--transition);
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.4s ease;
 }
 
 .amenity-visual-card:hover .amenity-visual-overlay {
-    background: rgba(0, 0, 0, 0.2);
+    opacity: 1; /* Visible on hover */
 }
 
 .amenity-visual-overlay h4 {
