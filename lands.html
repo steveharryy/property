@@ -164,9 +164,13 @@
         }
 
         /* Footer */
-        footer { padding: 60px 0 20px; border-top: 1px solid #eee; }
+        footer { background-color: var(--white); color: var(--text-color); padding: 60px 0 20px; border-top: 1px solid #eee; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 40px; }
         .footer-logo { height: 60px; margin-bottom: 20px; }
+        footer h4 { margin-bottom: 20px; color: var(--primary-color); text-transform: uppercase; font-size: 1rem; }
+        footer p, footer li a { color: var(--text-light); font-size: 0.9rem; }
+        footer li { margin-bottom: 10px; }
+        .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.8rem; color: #888; }
 
         /* Responsive Tweak */
         @media (max-width: 992px) {
@@ -378,7 +382,7 @@
                     <p>havenhuesreality@gmail.com</p>
                 </div>
             </div>
-            <div class="footer-bottom text-center">
+            <div class="footer-bottom">
                 <p>&copy; 2025 H2R Developers. All Rights Reserved.</p>
             </div>
         </div>
