@@ -83,39 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
-    // 6. Promotional Slider Logic
-    const slidesContainer = document.querySelector('.slides');
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    
-    if (slidesContainer && slides.length > 0) {
-        let currentIndex = 0;
-        
-        function updateSlider() {
-            slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-        
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateSlider();
-            });
-        }
-        
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateSlider();
-            });
-        }
-        
-        // Auto-slide every 5 seconds
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlider();
-        }, 5000);
-    }
+
 });
 
 // Add keyframes for mobile menu via JS
