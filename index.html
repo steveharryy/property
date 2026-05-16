@@ -591,7 +591,8 @@
             background-color: #fff;
         }
 
-        .land-item:hover {
+        .land-item-link { text-decoration: none; display: block; color: inherit; }
+        .land-item-link:hover .land-item {
             transform: translateY(-10px);
             border-color: var(--accent-color);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -831,7 +832,7 @@
                         <li><a href="lands.html#farmhouse">Farmhouse</a></li>
                     </ul>
                 </li>
-                <li><a href="builder-floor.html">Builder Floor</a></li>
+                <li><a href="#" class="open-projects-modal">Builder Floor</a></li>
                 <li><a href="blogs.html">Blogs</a></li>
                 <li><a href="contact.html" class="btn btn-primary"
                         style="padding: 8px 15px; font-size: 0.75rem;">Contact us</a></li>
@@ -898,45 +899,46 @@
         <div class="container">
             <h2 class="section-title text-center">ONGOING <span class="accent">PROJECTS</span></h2>
             <div class="land-gallery">
-                <div class="land-item">
-                    <img src="dlf_almeda.jpg" alt="Vallyca Residency">
-                    <p class="land-desc">Vallyca Residency — Sohna Road, Gurugram</p>
-                </div>
-                <div class="land-item">
-                    <img src="dlf_almeda_new.jpg" alt="DLF Almeda">
-                    <p class="land-desc">DLF Almeda — Sector 73, Gurugram</p>
-                </div>
-                <div class="land-item">
-                    <img src="land1.jpg" alt="Land Plan 1">
-                    <p class="land-desc">📍 Invest in Sector 102, Dwarka Expressway!<br>Opposite to EMAAR Emperial
-                        Gardens</p>
-                </div>
-                <div class="land-item">
-                    <img src="land2.jpg" alt="Land Plan 2">
-                    <p class="land-desc">📍 Invest in Sohna Road, South Gurgaon (Near Sohna Toll)!</p>
-                </div>
-                <div class="land-item">
-                    <img src="land3.jpg" alt="Land Plan 3">
-                    <p class="land-desc">📍 Location Sector 99, Main Dwarka Expressway</p>
-                </div>
-                <div class="land-item">
-                    <img src="land4.jpg" alt="Land Plan 4">
-                    <p class="land-desc">Exclusive 2621 Sq. Yard Agricultural Estate</p>
-                </div>
+                <a href="builder-floor.html" class="land-item-link">
+                    <div class="land-item">
+                        <img src="dlf_almeda.jpg" alt="Vallyca Residency">
+                        <p class="land-desc">Vallyca Residency — Sohna Road, Gurugram</p>
+                    </div>
+                </a>
+                <a href="contact.html" class="land-item-link">
+                    <div class="land-item">
+                        <img src="dlf_almeda_new.jpg" alt="DLF Almeda">
+                        <p class="land-desc">DLF Almeda — Sector 73, Gurugram</p>
+                    </div>
+                </a>
+                <a href="lands.html" class="land-item-link">
+                    <div class="land-item">
+                        <img src="land1.jpg" alt="Land Plan 1">
+                        <p class="land-desc">📍 Invest in Sector 102, Dwarka Expressway!<br>Opposite to EMAAR Emperial Gardens</p>
+                    </div>
+                </a>
+                <a href="lands.html" class="land-item-link">
+                    <div class="land-item">
+                        <img src="land2.jpg" alt="Land Plan 2">
+                        <p class="land-desc">📍 Invest in Sohna Road, South Gurgaon (Near Sohna Toll)!</p>
+                    </div>
+                </a>
+                <a href="lands.html" class="land-item-link">
+                    <div class="land-item">
+                        <img src="land3.jpg" alt="Land Plan 3">
+                        <p class="land-desc">📍 Location Sector 99, Main Dwarka Expressway</p>
+                    </div>
+                </a>
+                <a href="lands.html" class="land-item-link">
+                    <div class="land-item">
+                        <img src="land4.jpg" alt="Land Plan 4">
+                        <p class="land-desc">Exclusive 2621 Sq. Yard Agricultural Estate</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Payment Plan -->
-    <section id="payment" class="section">
-        <div class="container">
-            <h2 class="section-title text-center">PAYMENT <span class="accent">PLAN</span></h2>
-            <div class="price-list-image-container reveal-up" style="text-align: center; margin-top: 30px;">
-                <img src="price_list.png" alt="Price List and Payment Plan"
-                    style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.15);">
-            </div>
-        </div>
-    </section>
 
     <!-- Commercial Section (H2R Developers) -->
     <section id="commercial" class="section bg-dark">
@@ -974,7 +976,7 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Phone</h4>
-                            <p>+91 93105 48694</p>
+                            <p>+91 8882539130</p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1026,7 +1028,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="lands.html">Lands</a></li>
-                        <li><a href="builder-floor.html">Builder Floor</a></li>
+                        <li><a href="#" class="open-projects-modal">Builder Floor</a></li>
                         <li><a href="blogs.html">Blogs</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -1034,7 +1036,7 @@
                 <div class="footer-col">
                     <h4>Contact Info</h4>
                     <p>Office: Shop No. 14, Main Maruti Kunj Road, Gurugram</p>
-                    <p>+91 93105 48694</p>
+                    <p>+91 8882539130</p>
                     <p>havenhuesreality@gmail.com</p>
                 </div>
             </div>
@@ -1155,13 +1157,189 @@
     </script>
     <!-- Fixed Contact Bar -->
     <div class="fixed-contact-bar">
-        <a href="https://wa.me/919310548694" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:+919310548694" title="Call Us"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://wa.me/918882539130" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+918882539130" title="Call Us"><i class="fas fa-phone-alt"></i></a>
         <a href="mailto:havenhuesreality@gmail.com" title="Email Us"><i class="fas fa-envelope"></i></a>
     </div>
-    <a href="https://wa.me/919310548694" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <a href="https://wa.me/918882539130" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+<!-- Projects Modal -->
+<style>
+.projects-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projects-modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.projects-modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.projects-modal.show .projects-modal-content {
+    transform: translateY(0);
+}
+
+.projects-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: 300;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.projects-modal-close:hover {
+    color: #c19b45;
+}
+
+.projects-modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: #0a192f;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.projects-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.projects-modal-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.projects-modal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.projects-modal-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.projects-modal-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.projects-modal-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #0a192f;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.projects-modal-info p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .projects-modal-grid {
+        grid-template-columns: 1fr;
+    }
+    .projects-modal-content {
+        padding: 30px 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+</style>
+
+<div id="projectsModal" class="projects-modal">
+    <div class="projects-modal-content">
+        <span class="projects-modal-close">&times;</span>
+        <h2 class="projects-modal-title">Ongoing <span style="color: #c19b45;">Projects</span></h2>
+        <div class="projects-modal-grid">
+            
+            <!-- Vallyca Residency -->
+            <div class="projects-modal-card">
+                <img src="dlf_almeda.jpg" alt="Vallyca Residency">
+                <div class="projects-modal-info">
+                    <h3>Vallyca Residency</h3>
+                    <p><i class="fas fa-map-marker-alt" style="color: #c19b45;"></i> Sohna Road, Gurugram</p>
+                    <a href="builder-floor.html" class="btn btn-primary" style="display: block; width: 100%; text-align: center; background-color: #c19b45; color: #fff; padding: 12px; border-radius: 4px; font-weight: 600; text-transform: uppercase;">View Details</a>
+                </div>
+            </div>
+
+            <!-- DLF Almeda -->
+            <div class="projects-modal-card">
+                <img src="dlf_almeda_new.jpg" alt="DLF Almeda">
+                <div class="projects-modal-info">
+                    <h3>DLF Almeda</h3>
+                    <p><i class="fas fa-map-marker-alt" style="color: #c19b45;"></i> Sector 73, Gurugram</p>
+                    <a href="contact.html" class="btn btn-outline" style="display: block; width: 100%; text-align: center; border: 2px solid #c19b45; color: #c19b45; padding: 10px; border-radius: 4px; font-weight: 600; text-transform: uppercase;">Enquire Now</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('projectsModal');
+    const closeBtn = document.querySelector('.projects-modal-close');
+    const openBtns = document.querySelectorAll('.open-projects-modal');
+
+    if(modal && closeBtn) {
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('show');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+    }
+});
+</script>
+
 </body>
 
 </html>
