@@ -236,7 +236,133 @@
             .slide img { height: 300px; }
             .slider-btn { width: 40px; height: 40px; font-size: 1.2rem; }
         }
-    </style>
+    
+    /* MOBILE UI FIXES */
+    @media (max-width: 768px) {
+        .nav-container {
+            padding: 5px 15px !important;
+        }
+        .brand-name {
+            font-size: 0.8rem !important;
+            white-space: nowrap;
+        }
+        .nav-links {
+            position: fixed !important;
+            right: 0 !important;
+            top: 0 !important;
+            height: 100vh !important;
+            width: 75% !important;
+            background-color: #ffffff !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transform: translateX(100%);
+            transition: transform 0.4s ease-in-out !important;
+            z-index: 2000 !important;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.15) !important;
+            gap: 20px !important;
+            padding-top: 50px !important;
+        }
+        .nav-links.nav-active {
+            transform: translateX(0%) !important;
+        }
+        .nav-links li {
+            margin: 10px 0 !important;
+            width: 100%;
+            text-align: center;
+        }
+        .nav-links a {
+            font-size: 1.1rem !important;
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+        }
+        .burger {
+            display: block !important;
+            position: relative;
+            z-index: 2001 !important;
+        }
+        .hero-title, .page-hero-content h1 {
+            font-size: 2.2rem !important;
+            line-height: 1.2 !important;
+        }
+        .promo-slider {
+            margin: 15px auto !important;
+            height: auto !important;
+        }
+        .slide img {
+            height: 250px !important;
+            object-fit: cover !important;
+        }
+        .section {
+            padding: 50px 0 !important;
+        }
+        .section-title {
+            font-size: 1.8rem !important;
+        }
+    }
+
+
+    /* HERO FONT FIX */
+    @media (max-width: 768px) {
+        .page-hero-content h1 {
+            font-size: 1.8rem !important;
+            margin-bottom: 10px !important;
+        }
+        .page-hero-content p {
+            font-size: 0.9rem !important;
+        }
+        .hero-title {
+            font-size: 2rem !important;
+        }
+        .nav-container {
+            justify-content: space-between !important;
+        }
+        .logo-link {
+            gap: 8px !important;
+        }
+    }
+
+
+    /* FINAL MOBILE UI FIXES */
+    @media (max-width: 768px) {
+        .page-hero-content h1, .hero-content h1 {
+            font-size: 1.8rem !important;
+            line-height: 1.2 !important;
+            margin-bottom: 10px !important;
+        }
+        .page-hero-content p, .hero-content p {
+            font-size: 0.9rem !important;
+        }
+        .nav-container {
+            justify-content: space-between !important;
+            padding: 5px 15px !important;
+        }
+        .logo-link {
+            gap: 8px !important;
+        }
+        .brand-name {
+            font-size: 0.8rem !important;
+            white-space: nowrap !important;
+            display: block !important;
+        }
+        .nav-links {
+            padding-top: 80px !important;
+            gap: 15px !important;
+        }
+        .nav-links a {
+            font-size: 1rem !important;
+        }
+        .promo-slider {
+            margin: 10px auto !important;
+        }
+        .slide img {
+            height: 220px !important;
+        }
+    }
+
+</style>
 </head>
 
 <body>
@@ -291,8 +417,7 @@
                     <img src="land_promo3.jpg" alt="Own A Farm House">
                 </div>
             </div>
-            <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            <!-- Buttons removed as slider is now automated -->
         </div>
     </div>
 
@@ -393,6 +518,28 @@
     </footer>
 
     <script src="script.js"></script>
+<script>
+// Mobile Nav Toggle Logic
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    if (burger && nav) {
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+            
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+        });
+    }
+
+</script>
     <script>
         // Dedicated Slider Logic for Ongoing Projects
         const slidesContainer = document.querySelector('.slides');
@@ -421,11 +568,11 @@
                 });
             }
             
-            // Auto-slide every 5 seconds
+            // Auto-slide every 3 seconds
             setInterval(() => {
                 currentIndex = (currentIndex + 1) % slides.length;
                 updateSlider();
-            }, 5000);
+            }, 3000);
         }
     </script>
     <!-- Fixed Contact Bar -->
@@ -554,6 +701,132 @@
         overflow-y: auto;
     }
 }
+
+    /* MOBILE UI FIXES */
+    @media (max-width: 768px) {
+        .nav-container {
+            padding: 5px 15px !important;
+        }
+        .brand-name {
+            font-size: 0.8rem !important;
+            white-space: nowrap;
+        }
+        .nav-links {
+            position: fixed !important;
+            right: 0 !important;
+            top: 0 !important;
+            height: 100vh !important;
+            width: 75% !important;
+            background-color: #ffffff !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transform: translateX(100%);
+            transition: transform 0.4s ease-in-out !important;
+            z-index: 2000 !important;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.15) !important;
+            gap: 20px !important;
+            padding-top: 50px !important;
+        }
+        .nav-links.nav-active {
+            transform: translateX(0%) !important;
+        }
+        .nav-links li {
+            margin: 10px 0 !important;
+            width: 100%;
+            text-align: center;
+        }
+        .nav-links a {
+            font-size: 1.1rem !important;
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+        }
+        .burger {
+            display: block !important;
+            position: relative;
+            z-index: 2001 !important;
+        }
+        .hero-title, .page-hero-content h1 {
+            font-size: 2.2rem !important;
+            line-height: 1.2 !important;
+        }
+        .promo-slider {
+            margin: 15px auto !important;
+            height: auto !important;
+        }
+        .slide img {
+            height: 250px !important;
+            object-fit: cover !important;
+        }
+        .section {
+            padding: 50px 0 !important;
+        }
+        .section-title {
+            font-size: 1.8rem !important;
+        }
+    }
+
+
+    /* HERO FONT FIX */
+    @media (max-width: 768px) {
+        .page-hero-content h1 {
+            font-size: 1.8rem !important;
+            margin-bottom: 10px !important;
+        }
+        .page-hero-content p {
+            font-size: 0.9rem !important;
+        }
+        .hero-title {
+            font-size: 2rem !important;
+        }
+        .nav-container {
+            justify-content: space-between !important;
+        }
+        .logo-link {
+            gap: 8px !important;
+        }
+    }
+
+
+    /* FINAL MOBILE UI FIXES */
+    @media (max-width: 768px) {
+        .page-hero-content h1, .hero-content h1 {
+            font-size: 1.8rem !important;
+            line-height: 1.2 !important;
+            margin-bottom: 10px !important;
+        }
+        .page-hero-content p, .hero-content p {
+            font-size: 0.9rem !important;
+        }
+        .nav-container {
+            justify-content: space-between !important;
+            padding: 5px 15px !important;
+        }
+        .logo-link {
+            gap: 8px !important;
+        }
+        .brand-name {
+            font-size: 0.8rem !important;
+            white-space: nowrap !important;
+            display: block !important;
+        }
+        .nav-links {
+            padding-top: 80px !important;
+            gap: 15px !important;
+        }
+        .nav-links a {
+            font-size: 1rem !important;
+        }
+        .promo-slider {
+            margin: 10px auto !important;
+        }
+        .slide img {
+            height: 220px !important;
+        }
+    }
+
 </style>
 
 <div id="projectsModal" class="projects-modal">
