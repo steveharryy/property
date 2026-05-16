@@ -957,7 +957,29 @@ footer li {
         }
     }
     .mobile-nav-logo { display: none; }
+
+    /* Navbar Branding Upgrade */
+    .logo-link img.logo {
+        height: 75px !important;
+        transition: height 0.3s ease;
+    }
+    .brand-name {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 1.8rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 1px !important;
+        color: #0a192f !important;
+    }
+    @media (max-width: 768px) {
+        .logo-link img.logo {
+            height: 55px !important;
+        }
+        .brand-name {
+            font-size: 1.3rem !important;
+        }
+    }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
