@@ -398,6 +398,39 @@
         }
     }
 
+
+    /* Surgical Mobile Menu Fix */
+    @media (max-width: 768px) {
+        .mobile-nav-logo {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            width: 90%;
+        }
+        .mobile-nav-logo img {
+            height: 50px !important;
+            margin-bottom: 8px;
+        }
+        .mobile-nav-logo span {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: #0a192f;
+            font-size: 0.9rem;
+        }
+        .nav-links {
+            justify-content: flex-start !important;
+            padding-top: 60px !important;
+        }
+        .nav-links a {
+            opacity: 1 !important;
+            color: #0a192f !important;
+            transform: none !important;
+        }
+    }
+    .mobile-nav-logo { display: none; }
 </style>
 </head>
 
@@ -411,7 +444,11 @@
                 <span class="brand-name">H2R DEVELOPERS</span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
+                                <li class="mobile-nav-logo">
+                    <img src="logo.png" alt="H2R Logo">
+                    <span>H2R DEVELOPERS</span>
+                </li>
+<li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li class="dropdown">
                     <a href="lands.html">Lands ▾</a>
@@ -565,13 +602,7 @@
             nav.classList.toggle('nav-active');
             burger.classList.toggle('toggle');
             
-            navLinks.forEach((link, index) => {
-                if (link.style.animation) {
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                }
-            });
+            // Animation removed for visibility
         });
     }
 
@@ -899,6 +930,39 @@
         }
     }
 
+
+    /* Surgical Mobile Menu Fix */
+    @media (max-width: 768px) {
+        .mobile-nav-logo {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            width: 90%;
+        }
+        .mobile-nav-logo img {
+            height: 50px !important;
+            margin-bottom: 8px;
+        }
+        .mobile-nav-logo span {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: #0a192f;
+            font-size: 0.9rem;
+        }
+        .nav-links {
+            justify-content: flex-start !important;
+            padding-top: 60px !important;
+        }
+        .nav-links a {
+            opacity: 1 !important;
+            color: #0a192f !important;
+            transform: none !important;
+        }
+    }
+    .mobile-nav-logo { display: none; }
 </style>
 
 <div id="projectsModal" class="projects-modal">
